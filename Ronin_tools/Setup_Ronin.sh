@@ -26,10 +26,6 @@ sudo usermod -a -G root $username
 read -p "Press [Enter] key to Next Step..."
 
 
-echo -e "\e[38;1;1m#________ Download Github project ________#"
-wget 
-
-
 echo -e "\e[38;0;1m#______________ Install Open SSL Server _______________#"
 echo -e "\e[38;0;37m "
 sudo apt remove openssh-server		  ## remove Openssh
@@ -40,4 +36,9 @@ echo "AllowUsers $username" >> /etc/ssh/sshd_config
 service ssh restart
 netstat -ntlp
 read -p "Press [Enter] key to Next Step..."
+
+
+echo -e "\e[38;0;1m#______________ Install Sbin _______________#"
+echo -e "\e[38;0;37m "
+mv /Ronin_tools/sbin/* /sbin/
 
