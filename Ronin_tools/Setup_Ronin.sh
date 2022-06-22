@@ -38,7 +38,11 @@ netstat -ntlp
 read -p "Press [Enter] key to Next Step..."
 
 
-echo -e "\e[38;0;1m#______________ Install Sbin _______________#"
+echo -e "\e[38;0;1m#______________ Install tools to Environment _______________#"
 echo -e "\e[38;0;37m "
 mv /Ronin_tools/sbin/* /sbin/
+cd /sbin
+chmod 777 cip cls conwifi minergu netstart netstatus netstop
+ls -la cip cls conwifi minergu netstart netstatus netstop
 
+read -p "Press [Enter] key to END"
