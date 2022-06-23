@@ -26,15 +26,20 @@ sudo usermod -a -G root $username
 read -p "Press [Enter] key to Next Step..."
 
 
+
 echo -e "\e[38;0;1m#______________ Install Open SSL Server _______________#"
 echo -e "\e[38;0;37m "
-sudo apt remove openssh-server		  ## remove Openssh
-sudo apt purge openssh-server		  ## purge Openssh
-sudo apt install openssh-server		  ## Install Openssh
-touch /etc/ssh/sshd_config
-echo "AllowUsers $username" >> /etc/ssh/sshd_config
-service ssh restart
-netstat -ntlp
+read -p "Do you want to install SSH yes/no: " sshinstallation
+if [ "$sshinstallation" = "yes" ]; then
+	sudo apt remove openssh-server		  ## remove Openssh
+	sudo apt purge openssh-server		  ## purge Openssh
+	sudo apt install openssh-server		  ## Install Openssh
+	touch /etc/ssh/sshd_config
+	echo "AllowUsers $username" >> /etc/ssh/sshd_config
+	service ssh restart
+	netstat -ntlp
+	fi
+	
 read -p "Press [Enter] key to Next Step..."
 
 
