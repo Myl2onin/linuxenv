@@ -24,11 +24,12 @@ if [ "$usercre" = "yes" ]; then
 	fi
 sudo adduser $username sudo
 sudo usermod -a -G root $username
+read -p "Press [Enter] key to Next Step..."
+
 fi
 
 
 
-read -p "Press [Enter] key to Next Step..."
 
 
 
@@ -43,15 +44,14 @@ if [ "$sshinstallation" = "yes" ]; then
 	echo "AllowUsers $username" >> /etc/ssh/sshd_config
 	service ssh restart
 	netstat -ntlp
+	read -p "Press [Enter] key to Next Step..."
 fi
 	
-read -p "Press [Enter] key to Next Step..."
-
 
 echo -e "\e[38;0;1m#______________ Install tools to Environment _______________#"
 echo -e "\e[38;0;37m "
-cp /linuxenv-main/Ronin_tools/sbin/* /sbin/
-cp /linuxenv-main/Ronin_tools/etc/* /etc/
+cp Ronin_tools/sbin/* /sbin/
+#cp Ronin_tools/etc/* /etc/
 cd /sbin
 chmod 777 cip cls conwifi minergu netstart netstatus netstop
 ls -la cip cls conwifi minergu netstart netstatus netstop
