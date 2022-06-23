@@ -22,11 +22,12 @@ if [ "$usercre" = "yes" ]; then
 		echo "Only root may add a user to the system."
 		exit 2
 	fi
+sudo adduser $username sudo
+sudo usermod -a -G root $username
 fi
 
 
-sudo adduser $username sudo
-sudo usermod -a -G root $username
+
 read -p "Press [Enter] key to Next Step..."
 
 
