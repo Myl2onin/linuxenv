@@ -53,7 +53,7 @@ echo -e "\e[38;0;37m "
 cp Ronin_tools/sbin/* /sbin/
 #cp Ronin_tools/etc/* /etc/
 cd /sbin
-chmod 777 cip cls conwifi minergu netstart netstatus netstop
-ls -la cip cls conwifi minergu netstart netstatus netstop
+chmod 777 cip cls conwifi conwifishow minergu netstart netstatus netstop
+ls -la cip cls conwifi conwifishow minergu netstart netstatus netstop
 
 read -p "Press [Enter] key to END"
